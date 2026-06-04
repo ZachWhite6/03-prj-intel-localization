@@ -28,9 +28,28 @@ body {
 }
 
 header {
-  padding: 3rem 1.5rem 4rem;
+  padding: 2.5rem 1.5rem 3rem;
   text-align: center;
   background: linear-gradient(180deg, rgba(0, 113, 197, 0.16) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.hero-header {
+  background-image: url("img/1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 248, 255, 0.72);
+}
+
+.hero-header > div {
+  position: relative;
+  z-index: 1;
 }
 
 header > div {
@@ -61,7 +80,7 @@ header p {
 }
 
 section.timeline {
-  padding: 2rem 1.5rem 3rem;
+  padding: 1.5rem 1.5rem 3rem;
   max-width: 1120px;
   margin: 0 auto;
   /* stacked by default on small screens */
@@ -203,6 +222,10 @@ p:last-of-type {
   font-size: 0.95rem;
   color: var(--muted);
   margin: 0 0 2rem;
+}
+
+.cards-section .card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .newsletter-section {
