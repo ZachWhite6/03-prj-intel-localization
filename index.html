@@ -207,7 +207,12 @@
   <!-- Subscription Form -->
   <section class="newsletter-section py-4">
     <div class="container text-center">
-      <a href="#" class="newsletter-link">Subscribe to our Newsletter</a>
+      <h2 class="h4">Subscribe to our Newsletter</h2>
+      <form class="mx-auto d-flex flex-column flex-sm-row align-items-center justify-content-center gap-2" style="max-width: 640px;" action="#" method="POST">
+        <label class="visually-hidden" for="newsletterEmail">Email address</label>
+        <input type="email" class="form-control" id="newsletterEmail" name="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
     </div>
   </section>
 

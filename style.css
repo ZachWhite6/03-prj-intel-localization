@@ -224,8 +224,19 @@ p:last-of-type {
   margin: 0 0 2rem;
 }
 
-.cards-section .card {
+..cards-section .card {
   border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.cards-section .btn {
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cards-section .btn:hover {
+  transform: scale(1.04);
+  background-color: #1a92fb;
+  border-color: #1779cf;
+  box-shadow: 0 12px 24px rgba(0, 90, 168, 0.18);
 }
 
 .newsletter-section {
