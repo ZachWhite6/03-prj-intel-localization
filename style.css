@@ -65,6 +65,12 @@ section.timeline {
   max-width: 1120px;
   margin: 0 auto;
   /* stacked by default on small screens */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+section.timeline::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 section.timeline > div {
@@ -74,7 +80,12 @@ section.timeline > div {
   border: 1px solid rgba(112, 147, 190, 0.18);
   border-radius: 18px;
   padding: 1.5rem;
+  margin-bottom: 1.5rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+section.timeline > div:last-child {
+  margin-bottom: 0;
 }
 
 section.timeline > div:hover {
@@ -192,6 +203,25 @@ p:last-of-type {
   font-size: 0.95rem;
   color: var(--muted);
   margin: 0 0 2rem;
+}
+
+.newsletter-section {
+  padding: 2rem 1.5rem 3rem;
+}
+
+.newsletter-section .newsletter-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--intel-blue-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+.newsletter-section .newsletter-link:hover {
+  font-size: 1.15rem;
+  transform: scale(1.03);
+  color: var(--intel-blue);
 }
 
 @media (min-width: 720px) {
