@@ -158,57 +158,71 @@
   <!-- 3-Column Content Section -->
   <section class="cards-section py-4">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img src="img/2.jpg" class="card-img-top" alt="RISE Strategy" />
-            <div class="card-body">
-              <h2 class="h5 card-title text-center text-decoration-underline">RISE Strategy</h2>
-              <p class="card-text">
-                Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy,
-                Intel sets ambitious 2030 goals, including driving industry-wide progress
-                on climate action, water stewardship, and waste reduction.
-              </p>
+      <div id="cardsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-touch="true">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex justify-content-center">
+              <div class="card h-100 shadow-sm mx-auto" style="max-width: 720px;">
+                <img src="img/2.jpg" class="card-img-top" alt="RISE Strategy" />
+                <div class="card-body">
+                  <h2 class="h5 card-title text-center text-decoration-underline">RISE Strategy</h2>
+                  <p class="card-text">
+                    Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy,
+                    Intel sets ambitious 2030 goals, including driving industry-wide progress
+                    on climate action, water stewardship, and waste reduction.
+                  </p>
+                </div>
+                <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
+                  <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
             </div>
-            <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
-              <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <div class="card h-100 shadow-sm mx-auto" style="max-width: 720px;">
+                <img src="img/3.jpg" class="card-img-top" alt="Commitment" />
+                <div class="card-body">
+                  <h2 class="h5 card-title text-center text-decoration-underline">Commitment</h2>
+                  <p class="card-text">
+                    In 2022, Intel pledged to achieve net-zero greenhouse gas emissions
+                    (Scope 1 and 2) by 2040. This commitment builds on decades of environmental
+                    initiatives and partnerships across the semiconductor industry.
+                  </p>
+                </div>
+                <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
+                  <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <div class="card h-100 shadow-sm mx-auto" style="max-width: 720px;">
+                <img src="img/4.jpg" class="card-img-top" alt="Water & Waste" />
+                <div class="card-body">
+                  <h2 class="h5 card-title text-center text-decoration-underline">Water &amp; Waste</h2>
+                  <p class="card-text">
+                    Intel conserves billions of gallons of water annually and collaborates
+                    with local communities to restore watersheds. Intel also upcycles and
+                    recycles materials to reduce waste and advance a circular economy.
+                  </p>
+                </div>
+                <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
+                  <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img src="img/3.jpg" class="card-img-top" alt="Commitment" />
-            <div class="card-body">
-              <h2 class="h5 card-title text-center text-decoration-underline">Commitment</h2>
-              <p class="card-text">
-                In 2022, Intel pledged to achieve net-zero greenhouse gas emissions
-                (Scope 1 and 2) by 2040. This commitment builds on decades of environmental
-                initiatives and partnerships across the semiconductor industry.
-              </p>
-            </div>
-            <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img src="img/4.jpg" class="card-img-top" alt="Water & Waste" />
-            <div class="card-body">
-              <h2 class="h5 card-title text-center text-decoration-underline">Water &amp; Waste</h2>
-              <p class="card-text">
-                Intel conserves billions of gallons of water annually and collaborates
-                with local communities to restore watersheds. Intel also upcycles and
-                recycles materials to reduce waste and advance a circular economy.
-              </p>
-            </div>
-            <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#cardsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#cardsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
   </section>
@@ -236,5 +250,6 @@
       </ul>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
