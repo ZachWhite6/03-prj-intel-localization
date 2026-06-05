@@ -224,7 +224,22 @@ p:last-of-type {
   margin: 0 0 2rem;
 }
 
-..cards-section .card {
+.rtl-text {
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+.rtl-text .cards-section .carousel {
+  direction: ltr;
+}
+
+.rtl-text .cards-section .card,
+.rtl-text .cards-section .card-body,
+.rtl-text .cards-section .card-footer {
+  direction: rtl;
+}
+
+.cards-section .card {
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
 

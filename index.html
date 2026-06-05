@@ -11,16 +11,57 @@
     (function() {
       const rtlLanguages = ['ar', 'he', 'fa', 'ur', 'ps', 'sd', 'dv'];
       const html = document.documentElement;
-      const lang = html.lang.toLowerCase();
-      const baseLang = lang.split('-')[0];
-      const isRtl = rtlLanguages.includes(baseLang) || html.dir === 'rtl';
-      const rtlLink = document.getElementById('bootstrapRtl');
-      if (isRtl && rtlLink) {
-        html.dir = 'rtl';
-        rtlLink.disabled = false;
-      } else {
-        html.dir = 'ltr';
+
+      function getHtmlLanguage() {
+        return html.getAttribute('lang')?.toLowerCase() || '';
       }
+
+      function detectRtlFromText(text) {
+        if (!text) return false;
+        const rtlScript = /[\u0590-\u05FF\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
+        return rtlScript.test(text);
+      }
+
+      function isRtlLanguage(lang) {
+        const baseLang = lang.split('-')[0];
+        return rtlLanguages.includes(baseLang);
+      }
+
+      function applyDirection(lang) {
+        const useRtl = isRtlLanguage(lang) || detectRtlFromText(document.body.textContent);
+        html.dir = 'ltr';
+        const body = document.body;
+        if (!body) return;
+        body.classList.toggle('rtl-text', useRtl);
+      }
+
+      function refreshLanguageDetection() {
+        const lang = getHtmlLanguage();
+        applyDirection(lang);
+      }
+
+      const observer = new MutationObserver(mutations => {
+        let changed = false;
+        for (const mutation of mutations) {
+          if (mutation.type === 'attributes' && mutation.target === html && mutation.attributeName === 'lang') {
+            changed = true;
+            break;
+          }
+          if (mutation.type === 'childList' && mutation.target === document.body) {
+            changed = true;
+            break;
+          }
+        }
+        if (changed) {
+          refreshLanguageDetection();
+        }
+      });
+
+      observer.observe(html, { attributes: true, attributeFilter: ['lang'] });
+      observer.observe(document.body, { childList: true, subtree: true });
+
+      document.addEventListener('DOMContentLoaded', refreshLanguageDetection);
+      window.addEventListener('load', refreshLanguageDetection);
     })();
   </script>
 </head>
